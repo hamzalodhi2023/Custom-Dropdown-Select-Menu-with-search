@@ -8,7 +8,6 @@ let countries = [
   "Algeria",
   "Andorra",
   "Angola",
-  "Antigua and Barbuda",
   "Argentina",
   "Armenia",
   "Australia",
@@ -24,7 +23,6 @@ let countries = [
   "Benin",
   "Bhutan",
   "Bolivia",
-  "Bosnia and Herzegovina",
   "Botswana",
   "Brazil",
   "Brunei",
@@ -36,17 +34,13 @@ let countries = [
   "Cambodia",
   "Cameroon",
   "Canada",
-  "Central African Republic",
   "Chad",
   "China",
   "Colombia",
-  "Congo (Congo-Brazzaville)",
   "Costa Rica",
   "Croatia",
   "Cuba",
   "Cyprus",
-  "Czechia (Czech Republic)",
-  "Democratic Republic of the Congo",
   "Denmark",
   "Djibouti",
   "Dominica",
@@ -64,10 +58,12 @@ selectBtn.addEventListener("click", function () {
 
 function addCountry() {
   lists.innerHTML = "";
-  countries.forEach(function (conunty) {
-    let listItem = "<li>" + "county" + "</li>";
+  countries.forEach(function (country) {
+    let listItem = "<li>" + country + "</li>";
     lists.insertAdjacentHTML("beforeend", listItem);
   });
 }
 
 addCountry();
+
+lists.querySelectorAll("li").forEach;
