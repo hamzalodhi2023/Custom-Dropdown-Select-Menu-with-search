@@ -66,4 +66,27 @@ function addCountry() {
 
 addCountry();
 
-lists.querySelectorAll("li").forEach;
+lists.querySelectorAll("li").forEach((listItem) => {
+  listItem.addEventListener("click", () => {
+    updateSelectCountry(listItem);
+  });
+});
+
+function updateSelectCountry(listItem) {
+  searchInput.value = "";
+  selectBtn.firstElementChild.innerHTML = listItem.innerHTML;
+  container.classList.remove("active");
+}
+
+searchInput.addEventListener("keydown", () => {
+  let searchInpVal = searchInput.value.toLowerCase();
+  let filteredCountries = countries
+    .filter((country) => {
+      return country.toLocaleLowerCase().startsWith(searchInpVal);
+    })
+    .map((country) => {
+      return "<li>" + country + "</li>";
+    })
+    .join("");
+  lists.innerHTML = filteredCountries;
+});
